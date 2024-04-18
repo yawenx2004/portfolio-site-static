@@ -16,6 +16,7 @@
           <a class="text-button" href="./index.html" id="nav-home">home & portfolio</a>
           <a class="text-button" href="./resume.html" id="nav-resume">resume</a>
           <a class="text-button" href="./about.html" id="nav-about">about</a>
+          <a class="text-button" id="nav-journal">journal</a>
         </div>
     </div>
   </body>
@@ -31,12 +32,14 @@
     }
 
     // apply above function
-    if (pagePath === '/resume.html') {
-      makeLinkInactive('resume');
+    if (pagePath === '/index.html') {
+      makeLinkInactive('home');
     } else if (pagePath === '/about.html') {
       makeLinkInactive('about');
-    } else if (pagePath === '/index.html'){
-      makeLinkInactive('home');
+    } else if (pagePath === '/resume.html'){
+      makeLinkInactive('resume');
+    } else if (pagePath === '/journal.html'){
+      makeLinkInactive('journal');
     }
   </script>
 
@@ -52,34 +55,80 @@
           <div class="paragraph">I think you should hire me as a developer because I learn really fast and I love implementing things and it is 3:48 a.m. and I really should be asleep but I'm making this thing because it's so fun. :(</div>
         </div>
     </div>
+
+    <script>
+      // changes picture when we're at a certain scroll position
+      function logScrollPosition() {
+        var scrollPosition = window.scrollY;
+
+        // console.log("Scroll position:", scrollPosition);
+        if (scrollPosition > 120) {
+          document.getElementById('yawen-image').style.backgroundImage="url(../images/not-yawen-image.png)";
+        } else {
+          document.getElementById('yawen-image').style.backgroundImage="";
+        }
+      }
+      window.addEventListener("scroll", logScrollPosition);
+    </script>
   </body>
 
   <body>
     <div class="footer">
 
-      <div class="container">
-        <div class="title">Sitemap</div>
-        <a class="text-button" href="./art-gallery.html">
-          <div class="paragraph-dim">art gallery</div>
-        </a>
-        <a class="text-button" href="./resume.html">
-          <div class="paragraph-dim">resume</div>
-        </a>
-        <a class="text-button" href="./about.html">
-          <div class="paragraph-dim">about me</div>
-        </a>
-    </div>
+      <div class="container grid-container">
+          <div class="grid">
+            <div class="title">Sitemap</div>
+            <a class="text-button" href="./index.html">
+              <div class="paragraph-dim">home</div>
+            </a>
+            <a class="text-button" href="./resume.html">
+              <div class="paragraph-dim">resume</div>
+            </a>
+            <a class="text-button" href="./about.html">
+              <div class="paragraph-dim">about me</div>
+            </a>
+            <a class="text-button">
+              <div class="paragraph-dim">"blog"</div>
+            </a>
+          </div>
 
-    <div class="container">
-      <div class="grid">
-        <div class="title">Internal</div>
-        <a class="text-button" href="./internal.html">
-          <div class="paragraph-dim">Enter password to access this part of the site.</div>
-        </a>
+          <div class="grid">
+            <div class="title">Portfolio entries</div>
+            <a class="text-button">
+              <div class="paragraph-dim">COSC 25 capstone</div>
+            </a>
+            <a class="text-button">
+              <div class="paragraph-dim">art gallery</div>
+            </a>
+            <a class="text-button">
+              <div class="paragraph-dim">DALI dev challenge</div>
+            </a>
+            <a class="text-button" href="https://yawenx2004.github.io/nikitas-shampoo-restaurant/" target="_blank">
+              <div class="paragraph-dim">Nikita's shampoo restaurant</div>
+            </a>
+          </div>
+
+          <div class="grid">
+            <div class="title">Sandbox</div>
+            <a class="text-button">
+              <div class="paragraph-dim">box of sand</div>
+            </a>
+          </div>
       </div>
-    </div>
+      
+      <div class="container">
+        <div class="grid">
+          <div class="title">Internal</div>
+          <a class="text-button" href="./internal.html">
+            <div class="paragraph-dim">Enter password to access this secret part of the site.</div>
+          </a>
+        </div>
+      </div>
 
-    <div class="container">
-      <div class="paragraph">&copy; 2024 yawen xue</div>
+      <div class="container" id="copyright-container">
+        <div class="paragraph" id="copyright">&copy; 2024 yawen xue</div>
+      </div>
+      
     </div>
+  </body>
 </html>
