@@ -1,0 +1,14 @@
+{
+    "name": "portfolio_yx",
+    "version": "1.0.2",
+    "description": "my portfolio site <3 (HTML-only version)",
+    "main": "index.html",
+    "scripts": {
+    },
+    "keywords": [],
+    "author": "yawen_xue",
+    "license": "MIT",
+    "dependencies": {
+        "basic-auth": "^2.0.1"
+    }
+}
