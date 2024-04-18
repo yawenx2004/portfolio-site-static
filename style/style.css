@@ -176,7 +176,7 @@ a {
 /* //////////////////// */
 .section {
     background-color: var(--blue-sky);
-    background-image: url("../images/bg.png");
+    background-image: url("./images/bg.png");
     background-repeat: no-repeat;
     background-size: cover;
     padding: 48px 0px;
