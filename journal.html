@@ -2,124 +2,149 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>yawen's portfolio site</title>
+    <title>about me</title>
     <link rel="stylesheet" type="text/css" href="./style/style.css">
     <link rel="shortcut icon" type="image/png" href="./images/logo.png">
+    <style>
+      /* blog text input */
+      #text {
+        width: 100%;
+        height: 120px;
+        max-width: 100%;
+        resize: vertical;
+      }
+
+      label {
+        font-size: 12px;
+        font-weight: normal;
+      }
+    </style>
   </head>
 
   <body>
+    <!-- header -->
     <div class="header" id="header">
-        <a class="home-button" href="./index.html">
-            <div class="circle-icon"></div>
-        </a>
-        <div class="subtitles" id="subtitles">
-          <a class="text-button" href="./index.html" id="nav-home">home & portfolio</a>
-          <a class="text-button" href="./resume.html" id="nav-resume">resume</a>
-          <a class="text-button" href="./about.html" id="nav-about">about</a>
-          <a class="text-button" id="nav-journal">journal</a>
-        </div>
+      <a class="home-button" href="./index.html">
+          <div class="circle-icon"></div>
+      </a>
+      
+      <div class="subtitles" id="subtitles">
+        <a class="text-button" href="./index.html" id="nav-home">home & portfolio</a>
+        <a class="text-button" href="./resume.html" id="nav-resume">resume</a>
+        <a class="text-button" href="./about.html" id="nav-about">about</a>
+        <a class="text-button" href="./journal.html" id="nav-journal">journal</a>
+      </div>
     </div>
-  </body>
 
-  <script>
-    // make it so that whatever page you are on, the link goes inactive
-    const pagePath = window.location.pathname;
+    <script>
+      // make it so that whatever page you are on, the link goes inactive
+      const pagePath = window.location.pathname;
 
-    // function to remove href and change color
-    function makeLinkInactive(page) {
-      document.getElementById('nav-' + page).removeAttribute('href')
-      document.getElementById('nav-' + page).style.color = '#B7D465';
-    }
+      // function to remove href and change color
+      function makeLinkInactive(page) {
+        document.getElementById('nav-' + page).removeAttribute('href')
+        document.getElementById('nav-' + page).style.color = '#B7D465';
+      }
 
-    // apply above function
-    if (pagePath === '/index.html') {
-      makeLinkInactive('home');
-    } else if (pagePath === '/about.html') {
-      makeLinkInactive('about');
-    } else if (pagePath === '/resume.html'){
-      makeLinkInactive('resume');
-    } else if (pagePath === '/journal.html'){
-      makeLinkInactive('journal');
-    }
-  </script>
+      // apply above function
+      if (pagePath === '/index.html') {
+        makeLinkInactive('home');
+      } else if (pagePath === '/about.html') {
+        makeLinkInactive('about');
+      } else if (pagePath === '/resume.html'){
+        makeLinkInactive('resume');
+      } else if (pagePath === '/journal.html'){
+        makeLinkInactive('journal');
+      }
+    </script>
+    <!-- end header -->
 
-<body>
+    <!-- main -->
     <div class="container first-container">
       <div class="title">journal</div>
       <div class="paragraph">This is a work in progress! I intend to learn SQL and create a database to save these entries. Meanwhile we are displaying one entry at a time, saved in local storage; scroll down to see the most recent entry.</div>
     </div>
+    
     <div class="container" id="blogEntries"></div>
 
     <div class="spacer"></div>
-  </body>
 
-  <script>
+    <script>
+      // get from local storage
       const blogEntry = JSON.parse(localStorage.getItem('blogEntry'));
 
+      // make into html
       if (blogEntry) {
-          const blogEntriesDiv = document.getElementById('blogEntries');
-
-          const date = new Date(blogEntry.date);
-          const entryHTML = `
-              <div>
-                  <div class="title">${blogEntry.title}</div>
-                  <div class="paragraph">${blogEntry.date} // ${blogEntry.location}</div>
-                  <div class="paragraph">${blogEntry.text}</div>
-              </div>
-          `;
-          blogEntriesDiv.innerHTML = entryHTML;
+        const blogEntriesDiv = document.getElementById('blogEntries');
+        const date = new Date(blogEntry.date);
+        const entryHTML = `
+          <div>
+            <div class="title">${blogEntry.title}</div>
+            <div class="paragraph">${blogEntry.date} // ${blogEntry.location}</div>
+            <div class="paragraph">${blogEntry.text}</div>
+          </div>`;
+        blogEntriesDiv.innerHTML = entryHTML;
       }
-  </script>
+    </script>
+    <!-- end main -->
 
-  <body>
+    <!-- footer -->
     <div class="footer">
       <div class="spacer-small"></div>
 
+      <!-- sitemap -->
       <div class="container grid-container">
-          <div class="grid">
-            <div class="title">Sitemap</div>
-            <a class="text-button" href="./index.html">
-              <div class="paragraph-dim">home</div>
-            </a>
-            <a class="text-button" href="./resume.html">
-              <div class="paragraph-dim">resume</div>
-            </a>
-            <a class="text-button" href="./about.html">
-              <div class="paragraph-dim">about me</div>
-            </a>
-            <a class="text-button" href="./journal.html">
-              <div class="paragraph-dim">"blog"</div>
-            </a>
-          </div>
+        <div class="grid">
+          <div class="title">Sitemap</div>
+          <a class="text-button" href="./index.html">
+            <div class="paragraph-dim">home</div>
+          </a>
+          
+          <a class="text-button" href="./resume.html">
+            <div class="paragraph-dim">resume</div>
+          </a>
+            
+          <a class="text-button" href="./about.html">
+            <div class="paragraph-dim">about me</div>
+          </a>
+            
+          <a class="text-button" href="./journal.html">
+            <div class="paragraph-dim">"blog"</div>
+          </a>
+        </div>
 
-          <div class="grid">
-            <div class="title">Portfolio entries</div>
-            <a class="text-button">
-              <div class="paragraph-dim">COSC 25 capstone</div>
-            </a>
-            <a class="text-button">
-              <div class="paragraph-dim">art gallery</div>
-            </a>
-            <a class="text-button">
-              <div class="paragraph-dim">DALI dev challenge</div>
-            </a>
-            <a class="text-button" href="https://yawenx2004.github.io/nikitas-shampoo-restaurant/" target="_blank">
-              <div class="paragraph-dim">Nikita's shampoo restaurant</div>
-            </a>
-          </div>
+        <div class="grid">
+          <div class="title">Portfolio entries</div>
+          <a class="text-button">
+            <div class="paragraph-dim">COSC 25 capstone</div>
+          </a>
+            
+          <a class="text-button">
+            <div class="paragraph-dim">art gallery</div>
+          </a>
+            
+          <a class="text-button">
+            <div class="paragraph-dim">DALI dev challenge</div>
+          </a>
+            
+          <a class="text-button" href="https://yawenx2004.github.io/nikitas-shampoo-restaurant/" target="_blank">
+            <div class="paragraph-dim">Nikita's shampoo restaurant</div>
+          </a>
+        </div>
 
-          <div class="grid">
-            <div class="title">Sandbox</div>
-            <a class="text-button">
-              <div class="paragraph-dim">box of sand</div>
-            </a>
+        <div class="grid">
+          <div class="title">Sandbox</div>
+          <a class="text-button">
+            <div class="paragraph-dim">box of sand</div>
+          </a>
           </div>
       </div>
-      
+      <!-- end sitemap -->
+
       <div class="container">
         <div class="grid">
           <div class="title">Internal</div>
-          <a class="text-button" href="internal.html">
+          <a class="text-button" href="./internal.html">
             <div class="paragraph-dim">Enter password to access this secret part of the site.</div>
           </a>
         </div>
@@ -128,7 +153,7 @@
       <div class="container" id="copyright-container">
         <div class="paragraph" id="copyright">&copy; 2024 yawen xue</div>
       </div>
-      
     </div>
+    <!-- end footer -->
   </body>
 </html>

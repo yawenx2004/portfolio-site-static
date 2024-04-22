@@ -2,194 +2,223 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>yawen's portfolio site</title>
+    <title>about me</title>
     <link rel="stylesheet" type="text/css" href="./style/style.css">
     <link rel="shortcut icon" type="image/png" href="./images/logo.png">
   </head>
 
   <body>
+    <!-- header -->
     <div class="header" id="header">
-        <a class="home-button" href="./index.html">
-            <div class="circle-icon"></div>
-        </a>
-        <div class="subtitles" id="subtitles">
-          <a class="text-button" href="./index.html" id="nav-home">home & portfolio</a>
-          <a class="text-button" href="./resume.html" id="nav-resume">resume</a>
-          <a class="text-button" href="./about.html" id="nav-about">about</a>
-          <a class="text-button" id="nav-journal">journal</a>
-        </div>
-    </div>
-  </body>
-
-  <script>
-    // make it so that whatever page you are on, the link goes inactive
-    const pagePath = window.location.pathname;
-
-    // function to remove href and change color
-    function makeLinkInactive(page) {
-      document.getElementById('nav-' + page).removeAttribute('href')
-      document.getElementById('nav-' + page).style.color = '#B7D465';
-    }
-
-    // apply above function
-    if (pagePath === '/index.html') {
-      makeLinkInactive('home');
-    } else if (pagePath === '/about.html') {
-      makeLinkInactive('about');
-    } else if (pagePath === '/resume.html'){
-      makeLinkInactive('resume');
-    } else if (pagePath === '/journal.html'){
-      makeLinkInactive('journal');
-    }
-  </script>
-
-<body>
-  <div class="big-text-container first-container">
-    <div class="container-left">
-      <div class="big-textbox">
-        <div class="paragraph" id="greeting">Hello! I am</div>
-        <div class="title" id="name">&lt;yawen xue&gt;</div>
-        <div class="paragraph" id="tagline">UI/UX + graphic <span id="des">designer</span> // <span id="dev">coder</span> // <span id="tarot"></span></div>
-        <div class="paragraph">Sophomore at Dartmouth College, pursuing double majors in Cognitive Science and Computer Science. In my free time I rollerblade and read about the brain and crochet puppets. :)</div>
-        <div class="buttons-box">
-          <a class="button-a" href='#portfolio'>
-            <button class="button" id="primary-button">portfolio</button>
-          </a>
-          <a class="button-a" href="https://github.com/yawenx2004/" target="_blank">
-            <button class="button" id="primary-button">github</button>
-          </a>
-        </div>
+      <a class="home-button" href="./index.html">
+          <div class="circle-icon"></div>
+      </a>
+      
+      <div class="subtitles" id="subtitles">
+        <a class="text-button" href="./index.html" id="nav-home">home & portfolio</a>
+        <a class="text-button" href="./resume.html" id="nav-resume">resume</a>
+        <a class="text-button" href="./about.html" id="nav-about">about</a>
+        <a class="text-button" href="./journal.html" id="nav-journal">journal</a>
       </div>
     </div>
 
-    <div class="container-right">
+    <script>
+      // make it so that whatever page you are on, the link goes inactive
+      const pagePath = window.location.pathname;
+
+      // function to remove href and change color
+      function makeLinkInactive(page) {
+        document.getElementById('nav-' + page).removeAttribute('href')
+        document.getElementById('nav-' + page).style.color = '#B7D465';
+      }
+
+      // apply above function
+      if (pagePath === '/index.html') {
+        makeLinkInactive('home');
+      } else if (pagePath === '/about.html') {
+        makeLinkInactive('about');
+      } else if (pagePath === '/resume.html'){
+        makeLinkInactive('resume');
+      } else if (pagePath === '/journal.html'){
+        makeLinkInactive('journal');
+      }
+    </script>
+    <!-- end header -->
+
+    <!-- main -->
+    <div class="big-text-container first-container">
+      <div class="container-left">
+        <div class="big-textbox">
+          <!-- intro text -->
+          <div class="paragraph" id="greeting">Hello! I am</div>
+          <div class="title" id="name">&lt;yawen xue&gt;</div>
+          <div class="paragraph" id="tagline">UI/UX + graphic <span id="des">designer</span> // <span id="dev">coder</span> // <span id="tarot"></span></div>
+          <div class="paragraph">Sophomore at Dartmouth College, pursuing double majors in Cognitive Science and Computer Science. In my free time I rollerblade and read about the brain and crochet puppets. :)</div>
+
+          <!-- buttons -->
+          <div class="buttons-box">
+            <a class="button-a" href="#portfolio">
+              <button class="button" id="primary-button">portfolio</button>
+            </a>
+
+            <a class="button-a" href="https://github.com/yawenx2004/" target="_blank">
+              <button class="button" id="primary-button">github</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-right"></div>
     </div>
-  </div>
 
-  <div class="section" id="portfolio">
-    <div class="grid-container">
-      <a class="grid-tile"">
-        <div class="grid-container" id="tags">
-          <div class="grid-tile" id="tag">UI/UX</div>
-        </div>
-        <div class="img"></div>
-        <div class="textbox">
-          <div class="title" id="project-title">Capstone Project: <span class="unbold white-text">Intro to UI/UX Design</span></div>
-          <div class="paragraph" id="project-desc">Mobile app to curate artistic inspiration, designed with Idil Sahin.</div>
-        </div>
-      </a>
+    <!-- main-portfolio -->
+    <div class="section" id="portfolio">
+      <div class="grid-container">
+        <!-- ui/ux capstone -->
+        <a class="grid-tile">
+          <div class="grid-container" id="tags">
+            <div class="grid-tile" id="tag">UI/UX</div>
+          </div>
 
-      <a class="grid-tile">
-        <div class="grid-container" id="tags">
-          <div class="grid-tile" id="tag">graphics</div>
-        </div>
-        <div class="img"></div>
-        <div class="textbox">
-          <div class="title" id="project-title">Graphics & Illustrations</div>
-          <div class="paragraph" id="project-desc">Various things I've drawn over the years.</div>
-        </div>
-      </a>
+          <div class="img"></div>
 
-      <a class="grid-tile">
-        <div class="grid-container" id="tags">
-          <div class="grid-tile" id="tag">web dev</div>
-        </div>
-        <div class="img"></div>
-        <div class="textbox">
-          <div class="title" id="project-title">DALI Lab Developer Challenge: <span class="unbold white-text">Cooking</div>
-          <div class="paragraph" id="project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu blandit felis. Quisque consequat augue eget ipsum commodo tristique.</div>
-        </div>
-      </a>
+          <div class="textbox">
+            <div class="title" id="project-title">Capstone Project: <span class="unbold white-text">Intro to UI/UX Design</span></div>
+            <div class="paragraph" id="project-desc">Mobile app to curate artistic inspiration, designed with Idil Sahin.</div>
+          </div>
+        </a>
 
-      <a class="grid-tile" href="https://yawenx2004.github.io/nikitas-shampoo-restaurant/" target="_blank">
-        <div class="grid-container" id="tags">
-          <div class="grid-tile" id="tag">web dev</div>
-        </div>
-        <div class="img"></div>
-        <div class="textbox">
-          <div class="title" id="project-title">Nikita's shampoo restaurant</div>
-          <div class="paragraph" id="project-desc">Nikta Rusakov has a shampoo restaurant.</div>
-          <div class="paragraph" id="project-desc">Bit of an inside joke with myself, and one of my earlier web dev attempts. :)</div>
-        </div>
-      </a>
+        <!-- art -->
+        <a class="grid-tile">
+          <div class="grid-container" id="tags">
+            <div class="grid-tile" id="tag">graphics</div>
+          </div>
 
-      <a class="grid-tile" href="./index.html">
-        <div class="grid-container" id="tags">
-          <div class="grid-tile" id="tag">web dev</div>
-        </div>
-        <div class="img"></div>
-        <div class="textbox">
-          <div class="title" id="project-title">Personal Website</div>
-          <div class="paragraph" id="project-desc">This thing right here :)</div>
-        </div>
-      </a>
+          <div class="img"></div>
+
+          <div class="textbox">
+            <div class="title" id="project-title">Graphics & Illustrations</div>
+            <div class="paragraph" id="project-desc">Various things I've drawn over the years.</div>
+          </div>
+        </a>
+
+        <!-- dali dev -->
+        <a class="grid-tile">
+          <div class="grid-container" id="tags">
+            <div class="grid-tile" id="tag">web dev</div>
+          </div>
+          <div class="img"></div>
+          <div class="textbox">
+            <div class="title" id="project-title">DALI Lab Developer Challenge: <span class="unbold white-text">Cooking</div>
+            <div class="paragraph" id="project-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu blandit felis. Quisque consequat augue eget ipsum commodo tristique.</div>
+          </div>
+        </a>
+
+        <!-- nikita -->
+        <a class="grid-tile" href="https://yawenx2004.github.io/nikitas-shampoo-restaurant/" target="_blank">
+          <div class="grid-container" id="tags">
+            <div class="grid-tile" id="tag">web dev</div>
+          </div>
+
+          <div class="img"></div>
+
+          <div class="textbox">
+            <div class="title" id="project-title">Nikita's shampoo restaurant</div>
+            <div class="paragraph" id="project-desc">Nikta Rusakov has a shampoo restaurant.</div>
+            <div class="paragraph" id="project-desc">Bit of an inside joke with myself, and one of my earlier web dev attempts. :)</div>
+          </div>
+        </a>
+
+        <!-- this -->
+        <a class="grid-tile" href="./index.html">
+          <div class="grid-container" id="tags">
+            <div class="grid-tile" id="tag">web dev</div>
+          </div>
+          <div class="img"></div>
+          <div class="textbox">
+            <div class="title" id="project-title">Personal Website</div>
+            <div class="paragraph" id="project-desc">This thing right here :)</div>
+          </div>
+        </a>
+      </div>
     </div>
-  </div>
+    <!-- end main-portfolio -->
 
-  <script>  
-    const roles = ['"cognitive scientist"', 'artist', 'tarot reader', 'likes algorithms', 'beats up friends', 'you KNOW you want me in dali'];
-    const tarotElement = document.getElementById('tarot');
-  
-    let index = 0;
-    function changeRole() {
+    <script> 
+      /* change description */
+      const roles = ['"cognitive scientist"', 'artist', 'tarot reader', 'likes algorithms', 'beats up friends', 'you KNOW you want me in dali'];
+      const tarotElement = document.getElementById('tarot');
+    
+      let index = 0;
+      function changeRole() {
         tarotElement.textContent = roles[index++];
         if (index >= roles.length) {
-            index = 0;
+          index = 0;
         }
-    }
-    setInterval(changeRole, 2000);
-  </script>
-</body>
+      }
 
-  <body>
+      /* do it every 2 seconds */
+      setInterval(changeRole, 2000);
+    </script>
+    <!-- end main -->
+
+    <!-- footer -->
     <div class="footer">
       <div class="spacer-small"></div>
 
+      <!-- sitemap -->
       <div class="container grid-container">
-          <div class="grid">
-            <div class="title">Sitemap</div>
-            <a class="text-button" href="./index.html">
-              <div class="paragraph-dim">home</div>
-            </a>
-            <a class="text-button" href="./resume.html">
-              <div class="paragraph-dim">resume</div>
-            </a>
-            <a class="text-button" href="./about.html">
-              <div class="paragraph-dim">about me</div>
-            </a>
-            <a class="text-button" href="./journal.html">
-              <div class="paragraph-dim">"blog"</div>
-            </a>
-          </div>
+        <div class="grid">
+          <div class="title">Sitemap</div>
+          <a class="text-button" href="./index.html">
+            <div class="paragraph-dim">home</div>
+          </a>
+          
+          <a class="text-button" href="./resume.html">
+            <div class="paragraph-dim">resume</div>
+          </a>
+            
+          <a class="text-button" href="./about.html">
+            <div class="paragraph-dim">about me</div>
+          </a>
+            
+          <a class="text-button" href="./journal.html">
+            <div class="paragraph-dim">"blog"</div>
+          </a>
+        </div>
 
-          <div class="grid">
-            <div class="title">Portfolio entries</div>
-            <a class="text-button">
-              <div class="paragraph-dim">COSC 25 capstone</div>
-            </a>
-            <a class="text-button">
-              <div class="paragraph-dim">art gallery</div>
-            </a>
-            <a class="text-button">
-              <div class="paragraph-dim">DALI dev challenge</div>
-            </a>
-            <a class="text-button" href="https://yawenx2004.github.io/nikitas-shampoo-restaurant/" target="_blank">
-              <div class="paragraph-dim">Nikita's shampoo restaurant</div>
-            </a>
-          </div>
+        <div class="grid">
+          <div class="title">Portfolio entries</div>
+          <a class="text-button">
+            <div class="paragraph-dim">COSC 25 capstone</div>
+          </a>
+            
+          <a class="text-button">
+            <div class="paragraph-dim">art gallery</div>
+          </a>
+            
+          <a class="text-button">
+            <div class="paragraph-dim">DALI dev challenge</div>
+          </a>
+            
+          <a class="text-button" href="https://yawenx2004.github.io/nikitas-shampoo-restaurant/" target="_blank">
+            <div class="paragraph-dim">Nikita's shampoo restaurant</div>
+          </a>
+        </div>
 
-          <div class="grid">
-            <div class="title">Sandbox</div>
-            <a class="text-button">
-              <div class="paragraph-dim">box of sand</div>
-            </a>
+        <div class="grid">
+          <div class="title">Sandbox</div>
+          <a class="text-button">
+            <div class="paragraph-dim">box of sand</div>
+          </a>
           </div>
       </div>
-      
+      <!-- end sitemap -->
+
       <div class="container">
         <div class="grid">
           <div class="title">Internal</div>
-          <a class="text-button" href="internal.html">
+          <a class="text-button" href="./internal.html">
             <div class="paragraph-dim">Enter password to access this secret part of the site.</div>
           </a>
         </div>
@@ -198,7 +227,7 @@
       <div class="container" id="copyright-container">
         <div class="paragraph" id="copyright">&copy; 2024 yawen xue</div>
       </div>
-      
     </div>
+    <!-- end footer -->
   </body>
 </html>

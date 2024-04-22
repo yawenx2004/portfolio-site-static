@@ -8,151 +8,164 @@
   </head>
 
   <body>
+    <!-- header -->
     <div class="header" id="header">
-        <a class="home-button" href="./index.html">
-            <div class="circle-icon"></div>
-        </a>
-        <div class="subtitles" id="subtitles">
-          <a class="text-button" href="./index.html" id="nav-home">home & portfolio</a>
-          <a class="text-button" href="./resume.html" id="nav-resume">resume</a>
-          <a class="text-button" href="./about.html" id="nav-about">about</a>
-          <a class="text-button" id="nav-journal">journal</a>
-        </div>
+      <a class="home-button" href="./index.html">
+          <div class="circle-icon"></div>
+      </a>
+      
+      <div class="subtitles" id="subtitles">
+        <a class="text-button" href="./index.html" id="nav-home">home & portfolio</a>
+        <a class="text-button" href="./resume.html" id="nav-resume">resume</a>
+        <a class="text-button" href="./about.html" id="nav-about">about</a>
+        <a class="text-button" href="./journal.html" id="nav-journal">journal</a>
+      </div>
     </div>
-  </body>
 
-  <script>
-    // make it so that whatever page you are on, the link goes inactive
-    const pagePath = window.location.pathname;
+    <script>
+      // make it so that whatever page you are on, the link goes inactive
+      const pagePath = window.location.pathname;
 
-    // function to remove href and change color
-    function makeLinkInactive(page) {
-      document.getElementById('nav-' + page).removeAttribute('href')
-      document.getElementById('nav-' + page).style.color = '#B7D465';
-    }
+      // function to remove href and change color
+      function makeLinkInactive(page) {
+        document.getElementById('nav-' + page).removeAttribute('href')
+        document.getElementById('nav-' + page).style.color = '#B7D465';
+      }
 
-    // apply above function
-    if (pagePath === '/index.html') {
-      makeLinkInactive('home');
-    } else if (pagePath === '/about.html') {
-      makeLinkInactive('about');
-    } else if (pagePath === '/resume.html'){
-      makeLinkInactive('resume');
-    } else if (pagePath === '/journal.html'){
-      makeLinkInactive('journal');
-    }
-  </script>
+      // apply above function
+      if (pagePath === '/index.html') {
+        makeLinkInactive('home');
+      } else if (pagePath === '/about.html') {
+        makeLinkInactive('about');
+      } else if (pagePath === '/resume.html'){
+        makeLinkInactive('resume');
+      } else if (pagePath === '/journal.html'){
+        makeLinkInactive('journal');
+      }
+    </script>
+    <!-- end header -->
 
-<body>
-  <div class="container first-container" id="about-container">
+    <!-- main -->
+    <div class="container first-container" id="about-container">
       <div class="about-left">
         <div class="container" id="yawen-image"></div>
       </div>
+
       <div class="about-right">
         <div class="title">about me :)</div>
         <div class="paragraph">Hello! I used they/she pronouns; I exist and I like to eat berries.</div>
         <div class="paragraph">I currently work as a UI/UX mentor in the DALI Lab in Dartmouth College, and it's been lovely. In my spare time I'm learning to rollerblade, crochet, and read tarot.</div>
         <div class="paragraph">I think you should hire me as a developer because I learn really fast and I love implementing things and it is 3:48 a.m. and I really should be asleep but I'm making this thing because it's so fun. :(</div>
       </div>
-  </div>
+    </div>
 
-  <div class="container">
-    <div class="title">this is the weather where i'm from—</div>
-    <div class="grid-container" id="weather"></div>
-  </div>
+    <div class="container">
+      <div class="title">this is the weather where i'm from—</div>
+      <div class="grid-container" id="weather"></div>
+    </div>
 
-  <div class="spacer"></div>
+    <div class="spacer"></div>
   
-  <script>
-    // fetch weather
-    const cities = [
-      { name: 'Hanover, NH', lat: '43.700859', lon: '-72.289398' },
-      { name: 'Livermore, CA', lat: '37.6819', lon: '-121.7685' },
-      { name: 'Nanjing, China', lat: '32.0584', lon: '118.7965' },
-    ];
+    <script>
+      // cities i want the weather from
+      const cities = [
+        { name: 'Hanover, NH', lat: '43.700859', lon: '-72.289398' },
+        { name: 'Livermore, CA', lat: '37.6819', lon: '-121.7685' },
+        { name: 'Nanjing, China', lat: '32.0584', lon: '118.7965' },
+      ];
 
-    async function fetchLocalWeather(lat, lon) {
-      const apiKey = '36b343d898c2753e10cd15e0b4de0d7a';
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`);
-      const data = await response.json();
-      return data;
-    }
-  
-    // display weather
-    async function displayWeather() {
-      const weatherContainer = document.getElementById('weather');
-      
-      for (const city of cities) {
-        const weatherData = await fetchLocalWeather(city.lat, city.lon);
-        
-        const temperature = (weatherData.main.temp - 273.15).toFixed(2);
-        const description = weatherData.weather[0].description;
-        const icon = `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`;
-  
-        const weatherElement = document.createElement('div');
-        weatherElement.innerHTML = `
-              <div class="grid">
-                <img src="${icon}" alt="${description}" />
-                <div class="title">${city.name}</div>
-                <div class="paragraph">${temperature}°C // ${description}</div>
-              <div class="grid"`;
-        weatherContainer.appendChild(weatherElement);
+      // fetch weather
+      async function fetchLocalWeather(lat, lon) {
+        const apiKey = '36b343d898c2753e10cd15e0b4de0d7a';
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`);
+        const data = await response.json();
+        return data;
       }
-    }
   
-    window.onload = displayWeather;
-  </script>
-</body>
+      // display weather
+      async function displayWeather() {
+        const weatherContainer = document.getElementById('weather');
+      
+        // for every place you want to display weather from... display it
+        for (const city of cities) {
+          const weatherData = await fetchLocalWeather(city.lat, city.lon);
+          const temperature = (weatherData.main.temp - 273.15).toFixed(2);
+          const description = weatherData.weather[0].description;
+          const icon = `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`;
+          const weatherElement = document.createElement('div');
 
-  <body>
+          // make this html
+          weatherElement.innerHTML = `
+            <div class="grid">
+              <img src="${icon}" alt="${description}" />
+              <div class="title">${city.name}</div>
+              <div class="paragraph">${temperature}°C // ${description}</div>
+            <div class="grid"`;
+          weatherContainer.appendChild(weatherElement);
+        }
+      }
+  
+      window.onload = displayWeather;
+    </script>
+    <!-- end main -->
+
+    <!-- footer -->
     <div class="footer">
       <div class="spacer-small"></div>
 
+      <!-- sitemap -->
       <div class="container grid-container">
-          <div class="grid">
-            <div class="title">Sitemap</div>
-            <a class="text-button" href="./index.html">
-              <div class="paragraph-dim">home</div>
-            </a>
-            <a class="text-button" href="./resume.html">
-              <div class="paragraph-dim">resume</div>
-            </a>
-            <a class="text-button" href="./about.html">
-              <div class="paragraph-dim">about me</div>
-            </a>
-            <a class="text-button" href="./journal.html">
-              <div class="paragraph-dim">"blog"</div>
-            </a>
-          </div>
+        <div class="grid">
+          <div class="title">Sitemap</div>
+          <a class="text-button" href="./index.html">
+            <div class="paragraph-dim">home</div>
+          </a>
+          
+          <a class="text-button" href="./resume.html">
+            <div class="paragraph-dim">resume</div>
+          </a>
+            
+          <a class="text-button" href="./about.html">
+            <div class="paragraph-dim">about me</div>
+          </a>
+            
+          <a class="text-button" href="./journal.html">
+            <div class="paragraph-dim">"blog"</div>
+          </a>
+        </div>
 
-          <div class="grid">
-            <div class="title">Portfolio entries</div>
-            <a class="text-button">
-              <div class="paragraph-dim">COSC 25 capstone</div>
-            </a>
-            <a class="text-button">
-              <div class="paragraph-dim">art gallery</div>
-            </a>
-            <a class="text-button">
-              <div class="paragraph-dim">DALI dev challenge</div>
-            </a>
-            <a class="text-button" href="https://yawenx2004.github.io/nikitas-shampoo-restaurant/" target="_blank">
-              <div class="paragraph-dim">Nikita's shampoo restaurant</div>
-            </a>
-          </div>
+        <div class="grid">
+          <div class="title">Portfolio entries</div>
+          <a class="text-button">
+            <div class="paragraph-dim">COSC 25 capstone</div>
+          </a>
+            
+          <a class="text-button">
+            <div class="paragraph-dim">art gallery</div>
+          </a>
+            
+          <a class="text-button">
+            <div class="paragraph-dim">DALI dev challenge</div>
+          </a>
+            
+          <a class="text-button" href="https://yawenx2004.github.io/nikitas-shampoo-restaurant/" target="_blank">
+            <div class="paragraph-dim">Nikita's shampoo restaurant</div>
+          </a>
+        </div>
 
-          <div class="grid">
-            <div class="title">Sandbox</div>
-            <a class="text-button">
-              <div class="paragraph-dim">box of sand</div>
-            </a>
+        <div class="grid">
+          <div class="title">Sandbox</div>
+          <a class="text-button">
+            <div class="paragraph-dim">box of sand</div>
+          </a>
           </div>
       </div>
-      
+      <!-- end sitemap -->
+
       <div class="container">
         <div class="grid">
           <div class="title">Internal</div>
-          <a class="text-button" href="internal.html">
+          <a class="text-button" href="./internal.html">
             <div class="paragraph-dim">Enter password to access this secret part of the site.</div>
           </a>
         </div>
@@ -161,7 +174,7 @@
       <div class="container" id="copyright-container">
         <div class="paragraph" id="copyright">&copy; 2024 yawen xue</div>
       </div>
-      
     </div>
+    <!-- end footer -->
   </body>
 </html>
