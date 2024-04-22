@@ -64,21 +64,8 @@
   <div class="spacer"></div>
   
   <script>
-    // changes picture when we're at a certain scroll position
-    function logScrollPosition() {
-      var scrollPosition = window.scrollY;
-
-      // console.log("Scroll position:", scrollPosition);
-      if (scrollPosition > 120) {
-        document.getElementById('yawen-image').style.backgroundImage='url(../images/not-yawen-image.png)';
-      } else {
-        document.getElementById('yawen-image').style.backgroundImage='';
-      }
-    }
-    window.addEventListener("scroll", logScrollPosition);
-
-          // fetch weather
-          const cities = [
+    // fetch weather
+    const cities = [
       { name: 'Hanover, NH', lat: '43.700859', lon: '-72.289398' },
       { name: 'Livermore, CA', lat: '37.6819', lon: '-121.7685' },
       { name: 'Nanjing, China', lat: '32.0584', lon: '118.7965' },
