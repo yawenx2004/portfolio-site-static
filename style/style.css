@@ -736,11 +736,18 @@ embed {
 
     #copyright {
         font-size: 1.5em;
-    };
+        color: var(--white);
+    }
+
+    #about-container .about-left {
+        width: 480px;
+        height: 480px;
+    }
 
     #yawen-image {
         width: 480px;
         height: 480px;
-        border-radius: 240px;
+        border-radius: 480px;
+        justify-content: center;
     }
 }
