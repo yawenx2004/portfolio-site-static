@@ -757,6 +757,7 @@ label {
     #copyright {
         font-size: 1.5em;
         color: var(--white);
+        margin-top: 96px;
     }
 
     #about-container .about-left {
