@@ -630,7 +630,7 @@ embed {
     }
 
     .grid-container {
-        grid-template-columns: repeat(1, 240px);
+        grid-template-columns: repeat(1, 480px);
         justify-content: center;
     }
 
@@ -654,5 +654,70 @@ embed {
 
     #weather {
         justify-content: left;
+    }
+
+    /* we need to make things bigger */
+    .title {
+        font-size: 32px;
+    }
+
+    .paragraph {
+        font-size: 24px;
+    }
+
+    .subtitles a {
+        font-size: 24px;
+    }
+
+    #greeting {
+        font-size: 24px;
+    }
+    
+    #name {
+        font-size: 48px;
+    }
+    
+    #tagline {
+        font-size: 32px;
+    }
+    
+    #intro {
+        font-size: 24px;
+    }
+
+    .footer .title {
+        font-size: 24px;
+    }
+    
+    .footer .paragraph {
+        font-size: 16px;
+    }
+    
+    .footer .paragraph-dim {
+        color: var(--dim);
+    }
+
+    #tag {
+        font-size: 16px;
+    }
+
+    #project-title {
+        font-size: 32px;
+    }
+    
+    #project-desc {
+        font-size: 24px;
+    }
+    
+    .button {
+        font-size: 24px;
+    }
+
+    #weather .title {
+        font-size: 24px;
+    }
+    
+    #weather .paragraph {
+        font-size: 16px;
     }
 }
