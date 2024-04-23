@@ -673,15 +673,13 @@ embed {
         font-size: 40px;
     }
 
-    .paragraph {
-        font-size: 24px;
-    }
-
+    .paragraph,
     .subtitles a {
         font-size: 24px;
     }
 
-    #greeting {
+    #greeting,
+    #intro {
         font-size: 32px;
     }
     
@@ -693,23 +691,13 @@ embed {
         font-size: 40px;
         height: 96px;
     }
-    
-    #intro {
-        font-size: 32px;
-    }
 
     .footer .title {
         font-size: 32px;
     }
     
-    .footer .paragraph {
-        font-size: 24px;
-    }
-    
-    .footer > .grid-container > .grid > .text-button > .paragraph-dim {
-        font-size: 24px;
-    }
-
+    .footer .paragraph,
+    .footer > .grid-container > .grid > .text-button > .paragraph-dim,
     .footer > .container > .grid > .text-button > .paragraph-dim {
         font-size: 24px;
     }
@@ -717,11 +705,11 @@ embed {
     #tag {
         font-size: 24px;
         padding: 16px 24px;
-        border-radius: 16px;
+        border-radius: 24px;
     }
 
     #project-title {
-        font-size: 32px;
+        font-size: 40px;
     }
     
     #project-desc {
