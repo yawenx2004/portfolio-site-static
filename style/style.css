@@ -637,11 +637,18 @@ embed {
     .grid-tile {
         border-radius: 40px;
         padding: 24px 40px;
+        aspect-ratio: 1;
     }
 
     .footer .grid-container {
-        grid-template-columns: repeat(1, 240px);
+        grid-template-columns: repeat(1, 560px);
         justify-content: left;
+        gap: 48px;
+    }
+
+    .footer .grid-tile {
+        margin-bottom: 24px;
+        background-color: lightblue;
     }
 
     #about-container {
@@ -719,16 +726,18 @@ embed {
     
     .button {
         font-size: 24px;
-        border-radius: 40px;
+        border-radius: 48px;
         padding: 24px 32px;
     }
 
     #weather .title {
         font-size: 32px;
+        background-color: Red;
     }
     
     #weather .paragraph {
         font-size: 24px;
+        background-color: orange;
     }
 
     #copyright {
@@ -738,5 +747,6 @@ embed {
     #yawen-image {
         width: 480px;
         height: 480px;
+        border-radius: 240px;
     }
 }
