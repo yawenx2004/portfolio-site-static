@@ -176,12 +176,6 @@ hr {
     margin: 8px 0px;
 }
 
-.footer .paragraph {
-    font-size: 12px;
-    color: var(--white);
-    margin: 4px 0px;
-}
-
 .footer .paragraph-dim {
     color: var(--dim);
     font-size: 12px;
@@ -615,7 +609,7 @@ embed {
     embed {
         display: none;
     }
-    
+
     .circle-icon {
         display: none;
     }
@@ -700,9 +694,15 @@ embed {
         font-size: 2em;
     }
     
-    .footer .paragraph,
-    .footer > .grid-container > .grid > .text-button > .paragraph-dim,
-    .footer > .container > .grid > .text-button > .paragraph-dim {
+    .footer .grid-container {
+        display: none;
+    }
+
+    .footer hr {
+        display: none;
+    }
+
+    .footer .paragraph-dim {
         font-size: 1.5em;
     }
 
