@@ -610,8 +610,8 @@ embed {
     }
 }
 
-/* for iphone in portrait mode */
-@media only screen and (max-width: 414px) {
+/* for mobile */
+@media (max-width: 1200px) and (orientation: portrait) and (pointer: coarse) {
     .circle-icon {
         display: none;
     }
@@ -630,8 +630,13 @@ embed {
     }
 
     .grid-container {
-        grid-template-columns: repeat(2, 240px);
-        justify-content: space-between;
+        grid-template-columns: repeat(1, 240px);
+        justify-content: center;
+    }
+
+    .footer .grid-container {
+        grid-template-columns: repeat(1, 240px);
+        justify-content: left;
     }
 
     #about-container {
@@ -641,5 +646,13 @@ embed {
     #about-container .about-left {
         margin-right: 0px;
         margin-bottom: 48px;
+    }
+
+    #copyright {
+        text-align: left;
+    }
+
+    #weather {
+        justify-content: left;
     }
 }
