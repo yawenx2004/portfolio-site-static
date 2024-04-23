@@ -644,7 +644,7 @@ label {
 
     .container-left .big-textbox {
         padding: 60px 96px;
-        height: 720px;
+        height: 880px;
     }
 
     .grid-container {
@@ -655,7 +655,7 @@ label {
     .grid-tile {
         border-radius: 40px;
         padding: 24px 40px;
-        aspect-ratio: 1;
+        aspect-ratio: auto;
     }
 
     .footer .grid-container {
