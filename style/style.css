@@ -710,6 +710,10 @@ embed {
         font-size: 24px;
     }
 
+    .footer > .container > .grid > .text-button > .paragraph-dim {
+        font-size: 24px;
+    }
+
     #tag {
         font-size: 24px;
         padding: 16px 24px;
