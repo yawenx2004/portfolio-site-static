@@ -625,13 +625,18 @@ embed {
     }
 
     .container-left .big-textbox {
-        padding: 60px 72px;
-        height: 576px;
+        padding: 60px 96px;
+        height: 720px;
     }
 
     .grid-container {
-        grid-template-columns: repeat(1, 480px);
+        grid-template-columns: repeat(1, 560px);
         justify-content: center;
+    }
+
+    .grid-tile {
+        border-radius: 40px;
+        padding: 24px 40px;
     }
 
     .footer .grid-container {
@@ -658,7 +663,7 @@ embed {
 
     /* we need to make things bigger */
     .title {
-        font-size: 32px;
+        font-size: 40px;
     }
 
     .paragraph {
@@ -670,35 +675,38 @@ embed {
     }
 
     #greeting {
-        font-size: 24px;
-    }
-    
-    #name {
-        font-size: 48px;
-    }
-    
-    #tagline {
         font-size: 32px;
     }
     
+    #name {
+        font-size: 56px;
+    }
+    
+    #tagline {
+        font-size: 40px;
+        height: 96px;
+    }
+    
     #intro {
-        font-size: 24px;
+        font-size: 32px;
     }
 
     .footer .title {
-        font-size: 24px;
+        font-size: 32px;
     }
     
     .footer .paragraph {
-        font-size: 16px;
+        font-size: 24px;
     }
     
     .footer .paragraph-dim {
-        color: var(--dim);
+        font-size: 24px;
     }
 
     #tag {
-        font-size: 16px;
+        font-size: 24px;
+        padding: 16px 24px;
+        border-radius: 16px;
     }
 
     #project-title {
@@ -711,13 +719,24 @@ embed {
     
     .button {
         font-size: 24px;
+        border-radius: 40px;
+        padding: 24px 32px;
     }
 
     #weather .title {
-        font-size: 24px;
+        font-size: 32px;
     }
     
     #weather .paragraph {
-        font-size: 16px;
+        font-size: 24px;
+    }
+
+    #copyright {
+        font-size: 24px;
+    };
+
+    #yawen-image {
+        width: 480px;
+        height: 480px;
     }
 }
