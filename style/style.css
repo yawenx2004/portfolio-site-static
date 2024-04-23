@@ -706,7 +706,7 @@ embed {
         font-size: 24px;
     }
     
-    .footer .paragraph-dim {
+    .footer > .grid-container > .grid > .text-button > .paragraph-dim {
         font-size: 24px;
     }
 
@@ -732,12 +732,10 @@ embed {
 
     #weather .title {
         font-size: 32px;
-        background-color: Red;
     }
     
     #weather .paragraph {
         font-size: 24px;
-        background-color: orange;
     }
 
     #copyright {
