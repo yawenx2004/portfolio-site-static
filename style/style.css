@@ -205,7 +205,7 @@ hr {
 
 .container-left {
     flex: 2;
-    height: 576px;
+    height: 720px;
 }
 
 .container-right {
@@ -511,7 +511,7 @@ label {
 @media (min-width: 900px) and (max-width: 1199px) {
     .container-left .big-textbox {
         padding: 96px 120px;
-        height: 576px;
+        height: 720px;
     }
 
     .grid-container {
@@ -523,7 +523,7 @@ label {
 @media (min-width: 767px) and (max-width: 899px) {
     .container-left .big-textbox {
         padding: 96px 120px;
-        height: 576px;
+        height: 720px;
     }
 
     .container-left {
@@ -559,7 +559,7 @@ label {
 
     .container-left .big-textbox {
         padding: 60px 72px;
-        height: 576px;
+        height: 720px;
     }
 
     .grid-container {
@@ -593,7 +593,7 @@ label {
 
     .container-left .big-textbox {
         padding: 60px 72px;
-        height: 576px;
+        height: 720px;
     }
 
     .grid-container {
@@ -644,7 +644,7 @@ label {
 
     .container-left .big-textbox {
         padding: 60px 96px;
-        height: 880px;
+        height: 960px;
     }
 
     .grid-container {
@@ -655,7 +655,7 @@ label {
     .grid-tile {
         border-radius: 40px;
         padding: 24px 40px;
-        aspect-ratio: auto;
+        aspect-ratio: 1;
     }
 
     .footer .grid-container {
@@ -680,6 +680,7 @@ label {
 
     #copyright {
         text-align: left;
+        margin-top: 144px;
     }
 
     #weather {
@@ -757,7 +758,6 @@ label {
     #copyright {
         font-size: 1.5em;
         color: var(--white);
-        margin-top: 96px;
     }
 
     #about-container .about-left {
