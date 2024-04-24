@@ -231,7 +231,7 @@ hr {
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 32px;
-    height: 48px;
+    height: 72px;
 }
 
 #intro {
@@ -707,7 +707,7 @@ label {
     
     #tagline {
         font-size: 2.5em;
-        height: 96px;
+        height: 144px;
     }
 
     .footer .title {
