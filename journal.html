@@ -34,6 +34,17 @@
         <a class="text-button" href="./about.html" id="nav-about">about</a>
         <a class="text-button" href="./journal.html" id="nav-journal">journal</a>
       </div>
+
+      <div class="dropdown">
+        <button id="dropdown-button">menu</button>
+        <div id="dropdown-content" id="subtitles">
+          <a class="text-button" href="./index.html" id="nav-home">home & portfolio</a>
+          <a class="text-button" href="./resume.html" id="nav-resume">resume</a>
+          <a class="text-button" href="./about.html" id="nav-about">about</a>
+          <a class="text-button" href="./journal.html" id="nav-journal">journal</a>
+        </div>
+      </div>
+    </div>
     </div>
 
     <script>
@@ -56,6 +67,23 @@
       } else if (pagePath === '/journal.html'){
         makeLinkInactive('journal');
       }
+
+      // display dropdown menu if we click on menu
+      document.addEventListener('click', function(event) {
+
+        // check if click is in menu
+        var menuButton = document.getElementById('dropdown-button');
+        var isClickedInsideMenuButton = menuButton.contains(event.target);
+
+        // if so, display content; if not, display menu button
+        if (isClickedInsideMenuButton) {
+          document.getElementById('dropdown-button').style.display = 'none';
+          document.getElementById('dropdown-content').style.display = 'flex';
+        } else {
+          document.getElementById('dropdown-button').style.display = 'block';
+          document.getElementById('dropdown-content').style.display = 'none';
+        }
+      });
     </script>
     <!-- end header -->
 
