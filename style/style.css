@@ -667,8 +667,20 @@ label {
         display: none;
     }
 
-    .subtitles a {
-        margin-left: 24px;
+    .subtitles {
+        display: none;
+    }
+
+    .dropdown {
+        display: block;
+    }
+
+    #dropdown-content {
+        margin-top: 96px;
+    }
+
+    .header {
+        justify-content: center;
     }
 
     .big-text-container {
@@ -721,6 +733,11 @@ label {
     }
 
     /* we need to make things bigger */
+    #dropdown-content a {
+        font-size: 2.5em;
+        padding: 24px;
+    }
+
     .title {
         font-size: 2.5em;
     }
