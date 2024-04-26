@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>about me</title>
+    <title>UI/UX capstone</title>
     <link rel="stylesheet" type="text/css" href="./style/style.css">
     <link rel="shortcut icon" type="image/png" href="./images/logo.png">
   </head>
@@ -33,7 +33,6 @@
           <a class="text-button" href="./journal.html" id="nav-journal">journal</a>
         </div>
       </div>
-    </div>
     </div>
 
     <script>
@@ -79,71 +78,18 @@
     <!-- main -->
     <div class="spacer top-spacer"></div>
     
-    <div class="container first-container" id="about-container">
-      <div class="about-left">
-        <div class="container" id="yawen-image"></div>
+    <div class="container first-container">
+      <div class="title">Capstone Project // Intro to UI/UX Design</div>
+      <div class="paragraph">Under construction! Meanwhile, find link to Figma prototype below.</div>
+      
+      <div class="buttons-box">
+        <a class="button-a" href="https://www.figma.com/file/DFP1C6EUY8lsMVIzMR11hy/Portfolio?type=design&node-id=0%3A1&mode=design&t=Q0uWc6yVa20rm6JJ-1" target="_blank">
+          <button class="button" id="primary-button">figma</button>
+        </a>
       </div>
-
-      <div class="about-right">
-        <div class="title">about me :)</div>
-        <div class="paragraph">Hello! I'm Yawen, and I use they/she pronouns. I love creating delightful user experiences, and I love constant seeking new challenges to grow as a developer.</div>
-        <div class="paragraph">Currently I work as a UI/UX mentor at the DALI Lab in Dartmouth College, and it's been incredibly lovely.</div>
-        <div class="paragraph">I believe my ability to learn quickly and my enthusiasm for trying out new things (as well as my background as a designer) 
-          make me a strong candidate for any development team. I really like to implement things; it is 3:48 a.m. and I really should be asleep but I'm still here 
-          because I find building things very rewarding. 💫</div>
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="container">
-      <div class="title">this is the weather where i'm from—</div>
-      <div class="grid-container" id="weather"></div>
     </div>
 
     <div class="spacer"></div>
-  
-    <script>
-      // cities i want the weather from
-      const cities = [
-        { name: 'Hanover, NH', lat: '43.700859', lon: '-72.289398' },
-        { name: 'Livermore, CA', lat: '37.6819', lon: '-121.7685' },
-        { name: 'Nanjing, China', lat: '32.0584', lon: '118.7965' },
-      ];
-
-      // fetch weather
-      async function fetchLocalWeather(lat, lon) {
-        const apiKey = '36b343d898c2753e10cd15e0b4de0d7a';
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`);
-        const data = await response.json();
-        return data;
-      }
-  
-      // display weather
-      async function displayWeather() {
-        const weatherContainer = document.getElementById('weather');
-      
-        // for every place you want to display weather from... display it
-        for (const city of cities) {
-          const weatherData = await fetchLocalWeather(city.lat, city.lon);
-          const temperature = (weatherData.main.temp - 273.15).toFixed(2);
-          const description = weatherData.weather[0].description;
-          const icon = `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`;
-          const weatherElement = document.createElement('div');
-
-          // make this html
-          weatherElement.innerHTML = `
-            <div class="grid">
-              <img src="${icon}" alt="${description}" />
-              <div class="title">${city.name}</div>
-              <div class="paragraph">${temperature}°C // ${description}</div>
-            </div>`;
-          weatherContainer.appendChild(weatherElement);
-        }
-      }
-  
-      window.onload = displayWeather;
-    </script>
     <!-- end main -->
 
     <!-- footer -->
